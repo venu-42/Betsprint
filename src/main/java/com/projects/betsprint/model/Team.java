@@ -1,5 +1,6 @@
 package com.projects.betsprint.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -21,12 +22,6 @@ public class Team {
     private String name;
 
     @OneToMany(mappedBy = "team")
+    @JsonManagedReference("team-players")
     private List<Player> playerList;
-
-
-    @OneToMany(mappedBy = "homeTeam")
-    private List<Match> homeTeams;
-
-    @OneToMany(mappedBy = "awayTeam")
-    private List<Match> awayTeams;
 }

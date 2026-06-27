@@ -1,0 +1,4 @@
+$kind: http-request
+url: http://localhost:8080/api/matches/1/contests
+method: GET
+order: 4503584894977025

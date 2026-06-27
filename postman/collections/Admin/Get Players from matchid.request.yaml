@@ -1,0 +1,4 @@
+$kind: http-request
+url: http://localhost:8080/api/matches/2/players
+method: GET
+order: 4503575714470034

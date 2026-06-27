@@ -1,5 +1,6 @@
 package com.projects.betsprint.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -26,6 +27,7 @@ public class Transaction{
 
     @ManyToOne
     @JoinColumn(name = "user_id",nullable = false)
+    @JsonBackReference("user-transactions")
     private User user;
 
     private LocalDateTime createdAt;   // when did this transaction happen?

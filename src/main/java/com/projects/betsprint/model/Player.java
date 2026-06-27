@@ -1,5 +1,6 @@
 package com.projects.betsprint.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,15 +23,7 @@ public class Player {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "team_id", nullable = false)
+    @JsonBackReference("team-players")
     private Team team;
-
-    @OneToMany(mappedBy = "captain")
-    private List<FantasyTeam> captainfantasyTeamList;
-
-    @OneToMany(mappedBy = "viceCaptain")
-    private List<FantasyTeam> viceCaptainfantasyTeamList;
-
-    @OneToMany(mappedBy = "player")
-    private List<FantasyTeamPlayer> fantasyTeamPlayerList;
 
 }

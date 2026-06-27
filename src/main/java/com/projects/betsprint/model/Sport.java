@@ -1,5 +1,6 @@
 package com.projects.betsprint.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -20,6 +21,7 @@ public class Sport {
     private String name;
 
     @OneToMany(mappedBy = "sport")
+    @JsonManagedReference("sport-tournaments")
     private List<Tournament> tournamentList;
 
 }

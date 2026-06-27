@@ -1,5 +1,6 @@
 package com.projects.betsprint.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,6 +18,7 @@ public class FantasyTeamPlayer {
 
     @ManyToOne
     @JoinColumn(name = "fantasy_team_id", nullable = false)
+    @JsonBackReference("fantasy-team-players")
     private FantasyTeam fantasyTeam;
 
     @ManyToOne

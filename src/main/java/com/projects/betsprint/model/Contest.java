@@ -1,5 +1,7 @@
 package com.projects.betsprint.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -20,9 +22,11 @@ public class Contest {
 
     @ManyToOne
     @JoinColumn(name = "match_id", nullable = false)
+    @JsonBackReference("match-contests")
     private Match match;
 
     @OneToMany(mappedBy = "contest")
+    @JsonManagedReference("contest-contest-entries")
     private List<ContestEntry> contestEntryList;
 
     private String name;

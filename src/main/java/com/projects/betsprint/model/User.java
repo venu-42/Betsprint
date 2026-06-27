@@ -1,5 +1,6 @@
 package com.projects.betsprint.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,12 +23,15 @@ public class User {
 
 
     @OneToMany(mappedBy = "user", orphanRemoval = false)
+    @JsonManagedReference("user-transactions")
     List<Transaction> transactionsList;
 
     @OneToMany(mappedBy = "user")
+    @JsonManagedReference("user-fantasy-teams")
     List<FantasyTeam> fantasyTeamList;
 
     @OneToMany(mappedBy = "user")
+    @JsonManagedReference("user-contest-entries")
     List<ContestEntry> contestEntryList;
 
     private String email;

@@ -1,0 +1,5 @@
+$kind: http-request
+name: Get All Matches
+url: http://localhost:8080/api/matches/37382ee0-59c9-4f5d-a13a-971bb6aee467
+method: GET
+order: 4503531861368246
