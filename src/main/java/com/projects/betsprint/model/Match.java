@@ -1,12 +1,16 @@
 package com.projects.betsprint.model;
 
 import jakarta.persistence.*;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.List;
 import java.util.UUID;
 
 @NoArgsConstructor
+@Getter
+@Setter
 @Entity
 @Table(name = "matches")
 public class Match {
@@ -32,5 +36,4 @@ public class Match {
     @OneToMany(mappedBy = "match")
     List<Contest> contestList;
 }
-
 

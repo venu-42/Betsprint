@@ -1,12 +1,16 @@
 package com.projects.betsprint.model;
 
 import jakarta.persistence.*;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.List;
 import java.util.Set;
 
 @NoArgsConstructor
+@Getter
+@Setter
 @Entity
 @Table(name = "contests")
 public class Contest {
@@ -21,6 +25,8 @@ public class Contest {
     @OneToMany(mappedBy = "contest")
     private List<ContestEntry> contestEntryList;
 
-
-    private Long totalEntries;
+    private String name;
+    private String prizePool;
+    private Long maxEntries;
+    private Long entryFees;
 }

@@ -1,13 +1,17 @@
 package com.projects.betsprint.model;
 
 import jakarta.persistence.*;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 // ContestEntry.java — new entity needed
 @NoArgsConstructor
+@Getter
+@Setter
 @Entity
 @Table(name = "contest_entries")
 public class ContestEntry {
