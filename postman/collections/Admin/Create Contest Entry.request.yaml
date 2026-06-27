@@ -1,0 +1,17 @@
+$kind: http-request
+name: Create Contest Entry
+url: http://localhost:8080/api/contest-entries
+method: POST
+body:
+  type: json
+  content: |-
+    {
+        "contestId" : 3,
+        "fantasyTeamId":2,
+        "userId":"418304df-3ee8-4595-8853-488e733e202b",
+        "finalScore":0,
+        "rank":0,
+        "winnings":0,
+        "joinedAt":"2026-06-28T00:20:00"
+    }
+order: 4503590365004500

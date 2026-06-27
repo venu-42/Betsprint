@@ -7,6 +7,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 @Repository
@@ -21,5 +22,6 @@ public interface ContestEntryRepository extends JpaRepository<ContestEntry, Long
     @Query("SELECT ce FROM ContestEntry ce JOIN FETCH ce.contest c JOIN FETCH c.match WHERE ce.user.userId = :userId")
     List<ContestEntry> findAllByUserId(@Param("userId") UUID userId);
 
+    boolean existsByContest_ContestIdAndFantasyTeam_FantasyTeamId(Long contestId, Long fantasyTeamId);
     long countByContestContestId(Long contestId);
 }

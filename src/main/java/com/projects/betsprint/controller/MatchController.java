@@ -1,16 +1,14 @@
 package com.projects.betsprint.controller;
 
 import com.projects.betsprint.dto.CreateMatchRequest;
+import com.projects.betsprint.dto.ContestResponse;
 import com.projects.betsprint.dto.MatchResponse;
-import com.projects.betsprint.model.Contest;
-import com.projects.betsprint.model.FantasyTeam;
-import com.projects.betsprint.model.Player;
+import com.projects.betsprint.dto.PlayerResponse;
 import com.projects.betsprint.service.MatchService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/matches")
@@ -38,12 +36,12 @@ public class MatchController {
     }
 
     @GetMapping("/{matchId}/contests")
-    public List<Contest> getContestsByMatchId(@PathVariable("matchId") Long matchId){
+    public List<ContestResponse> getContestsByMatchId(@PathVariable("matchId") Long matchId){
         return matchService.getContestsByMatchId(matchId);
     }
 
-    @GetMapping("{matchId}/players")
-    public List<Player> getPlayersByMatchId(@PathVariable("matchId") Long matchId){
+    @GetMapping("/{matchId}/players")
+    public List<PlayerResponse> getPlayersByMatchId(@PathVariable("matchId") Long matchId){
         return matchService.getPlayersByMatchId(matchId);
     }
 

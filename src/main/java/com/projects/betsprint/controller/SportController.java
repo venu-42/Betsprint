@@ -2,13 +2,18 @@ package com.projects.betsprint.controller;
 
 import com.projects.betsprint.dto.CreateSportRequest;
 import com.projects.betsprint.dto.SportResponse;
+import com.projects.betsprint.dto.TournamentResponse;
 import com.projects.betsprint.service.SportService;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/sports")
@@ -23,5 +28,15 @@ public class SportController {
     @ResponseStatus(HttpStatus.CREATED)
     public SportResponse create(@RequestBody CreateSportRequest request) {
         return sportService.create(request);
+    }
+
+    @GetMapping
+    public List<SportResponse> getAllSports() {
+        return sportService.getAllSports();
+    }
+
+    @GetMapping("/{sportId}/tournaments")
+    public List<TournamentResponse> getTournamentsBySportId(@PathVariable Long sportId) {
+        return sportService.getTournamentsBySportId(sportId);
     }
 }

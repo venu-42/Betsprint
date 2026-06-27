@@ -6,10 +6,9 @@ body:
   type: json
   content: |-
     {
-        "matchId" : "1",
-        "name":"Ultimate Contest",
-        "maxEntries":1000,
-        "prizePool":100000,
-        "entryFees":100
+        "userId" : "418304df-3ee8-4595-8853-488e733e202b",
+        "matchId":"2",
+        "captainId":1,
+        "viceCaptainId":2
     }
 order: 4503070476573627
