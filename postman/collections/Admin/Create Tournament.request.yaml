@@ -1,0 +1,13 @@
+$kind: http-request
+name: Create Tournament
+url: http://localhost:8080/api/tournaments
+method: POST
+body:
+  type: json
+  content: |-
+    {
+        "sportId" : "1",
+        "title":"ODIWorldCupWomen2026",
+        "startDateTime":"2026-09-01T15:30:00"
+    }
+order: 2835670385675313

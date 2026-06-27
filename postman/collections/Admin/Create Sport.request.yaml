@@ -1,0 +1,11 @@
+$kind: http-request
+name: Create Sport
+url: http://localhost:8080/api/sports
+method: POST
+body:
+  type: json
+  content: |-
+    {
+        "name" : "Football"
+    }
+order: 1782554692157

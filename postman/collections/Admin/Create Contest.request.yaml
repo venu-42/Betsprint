@@ -1,0 +1,15 @@
+$kind: http-request
+name: Create Contest
+url: http://localhost:8080/api/contests
+method: POST
+body:
+  type: json
+  content: |-
+    {
+        "matchId" : "1",
+        "name":"Ultimate Contest",
+        "maxEntries":1000,
+        "prizePool":100000,
+        "entryFees":100
+    }
+order: 4502300344858791

@@ -1,0 +1,11 @@
+$kind: http-request
+name: Create Team
+url: http://localhost:8080/api/teams
+method: POST
+body:
+  type: json
+  content: |-
+    {
+        "name":"Ireland"
+    }
+order: 4404090990123088

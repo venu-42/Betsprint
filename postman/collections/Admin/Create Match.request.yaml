@@ -1,0 +1,14 @@
+$kind: http-request
+url: http://localhost:8080/api/matches
+method: POST
+body:
+  type: json
+  content: |-
+    {
+        "tournamentId" : "37382ee0-59c9-4f5d-a13a-971bb6aee467",
+        "homeTeamId" : "2",
+        "awayTeamId" : "5",
+        "title":"League : AUS vs SA"
+
+    }
+order: 4493149201613839
